@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Mostra Científica do CETINSC — 1º Ano C. Conheça quatro projetos desenvolvidos a partir da acerola.">
+
+  <meta name="theme-color" content="#176b3a">
+
+  <title>Acerola em Transformação | CETINSC</title>
+
+  <style>
+
+    :root {
+      --verde: #176b3a;
+      --verde-escuro: #092d1a;
+      --verde-claro: #eaf7ed;
+      --vermelho: #d92d3a;
+      --vermelho-claro: #fff0f1;
+      --creme: #fffaf0;
+      --branco: #ffffff;
+      --texto: #14271c;
+      --cinza: #627067;
+      --borda: rgba(20,39,28,.10);
+      --sombra: 0 18px 50px rgba(10,55,30,.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+      background: var(--creme);
+      color: var(--texto);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      background: rgba(9,45,26,.92);
+
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.1);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+
+      min-height: 64px;
+
+      margin: auto;
+
+      padding: 0 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 15px;
+    }
+
+    .logo {
+      color: white;
+
+      text-decoration: none;
+
+      font-weight: 900;
+
+      white-space: nowrap;
+    }
+
+    .logo span {
+      opacity: .65;
+
+      font-weight: 600;
+    }
+
+    .menu {
+      display: flex;
+
+      gap: 5px;
+
+      overflow-x: auto;
+
+      scrollbar-width: none;
+    }
+
+    .menu::-webkit-scrollbar {
+      display: none;
+    }
+
+    .menu a {
+      color: rgba(255,255,255,.9);
+
+      text-decoration: none;
+
+      padding: 8px 11px;
+
+      border-radius: 10px;
+
+      font-size: .88rem;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+    }
+
+    .menu a:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 92vh;
+
+      padding:
+        125px
+        20px
+        80px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      color: white;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 15% 25%,
+          rgba(255,255,255,.15)
+          0 8px,
+          transparent 9px
+        ),
+
+        radial-gradient(
+          circle at 82% 18%,
+          rgba(255,255,255,.12)
+          0 10px,
+          transparent 11px
+        ),
+
+        linear-gradient(
+          135deg,
+          #0b4d2a,
+          #176b3a 50%,
+          #38a654
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      right: -220px;
+      top: -200px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.07);
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      left: -180px;
+      bottom: -180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(217,45,58,.14);
+    }
+
+    .hero-content {
+      max-width: 950px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding:
+        8px
+        15px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.11);
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      font-size: .85rem;
+
+      font-weight: 900;
+
+      letter-spacing: .7px;
+    }
+
+    .hero h1 {
+      margin:
+        25px
+        0
+        18px;
+
+      font-size:
+        clamp(
+          3rem,
+          10vw,
+          7rem
+        );
+
+      line-height: .9;
+
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: #ff6670;
+    }
+
+    .hero-description {
+      max-width: 760px;
+
+      margin: auto;
+
+      font-size:
+        clamp(
+          1.05rem,
+          2.5vw,
+          1.35rem
+        );
+
+      color:
+        rgba(255,255,255,.91);
+    }
+
+    .buttons {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 48px;
+
+      padding:
+        12px
+        21px;
+
+      border-radius: 14px;
+
+      text-decoration: none;
+
+      font-weight: 900;
+
+      transition: .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: white;
+
+      color: var(--verde-escuro);
+
+      box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.16);
+    }
+
+    .button-secondary {
+      color: white;
+
+      background:
+        rgba(255,255,255,.1);
+
+      border:
+        1px solid
+        rgba(255,255,255,.22);
+    }
+
+
+    /* =========================
+       ESTATÍSTICAS
+    ========================= */
+
+    .stats {
+      max-width: 1050px;
+
+      margin:
+        -45px
+        auto
+        0;
+
+      padding:
+        0
+        20px;
+
+      position: relative;
+
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 15px;
+    }
+
+    .stat {
+      background: white;
+
+      padding: 22px;
+
+      border-radius: 20px;
+
+      text-align: center;
+
+      box-shadow: var(--sombra);
+
+      border:
+        1px solid
+        var(--borda);
+    }
+
+    .stat strong {
+      display: block;
+
+      font-size: 2rem;
+
+      color: var(--verde);
+    }
+
+    .stat span {
+      color: var(--cinza);
+
+      font-size: .9rem;
+    }
+
+
+    /* =========================
+       SEÇÕES
+    ========================= */
+
+    .section {
+      max-width: 1160px;
+
+      margin: auto;
+
+      padding:
+        90px
+        20px;
+    }
+
+    .section-title {
+      text-align: center;
+
+      max-width: 750px;
+
+      margin:
+        0
+        auto
+        45px;
+    }
+
+    .section-title small {
+      color: var(--vermelho);
+
+      text-transform: uppercase;
+
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+    }
+
+    .section-title h2 {
+      font-size:
+        clamp(
+          2rem,
+          5vw,
+          3.2rem
+        );
+
+      line-height: 1.05;
+
+      margin:
+        10px
+        0
+        14px;
+    }
+
+    .section-title p {
+      color: var(--cinza);
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       PROJETOS
+    ========================= */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2,1fr);
+
+      gap: 25px;
+    }
+
+    .project {
+      background: white;
+
+      border-radius: 27px;
+
+      padding: 30px;
+
+      border:
+        1px solid
+        var(--borda);
+
+      box-shadow:
+        var(--sombra);
+
+      transition:
+        transform .25s,
+        box-shadow .25s;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .project:hover {
+      transform:
+        translateY(-6px);
+
+      box-shadow:
+        0 25px 60px
+        rgba(10,55,30,.15);
+    }
+
+    .project::after {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      right: -80px;
+      top: -80px;
+
+      border-radius: 50%;
+
+      background:
+        var(--verde-claro);
+    }
+
+    .project.red::after {
+      background:
+        var(--vermelho-claro);
+    }
+
+    .project-icon {
+      width: 65px;
+      height: 65px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 19px;
+
+      background:
+        var(--verde-claro);
+
+      font-size: 32px;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .project.red
+    .project-icon {
+      background:
+        var(--vermelho-claro);
+    }
+
+    .project h3 {
+      font-size: 1.65rem;
+
+      line-height: 1.1;
+
+      margin:
+        20px
+        0
+        5px;
+    }
+
+    .subtitle {
+      color:
+        var(--verde);
+
+      font-weight: 900;
+
+      margin-bottom: 17px;
+    }
+
+    .project.red
+    .subtitle {
+      color:
+        var(--vermelho);
+    }
+
+    .project p {
+      color: var(--cinza);
+    }
+
+    .info {
+      margin-top: 20px;
+
+      padding: 18px;
+
+      border-radius: 17px;
+
+      background:
+        var(--verde-claro);
+    }
+
+    .project.red
+    .info {
+      background:
+        var(--vermelho-claro);
+    }
+
+    .info h4 {
+      margin:
+        0
+        0
+        8px;
+
+      color:
+        var(--verde);
+    }
+
+    .project.red
+    .info h4 {
+      color:
+        var(--vermelho);
+    }
+
+    .info ul,
+    .info ol {
+      margin:
+        7px
+        0
+        0;
+
+      padding-left: 22px;
+    }
+
+    .info li {
+      margin: 5px 0;
+    }
+
+    .tag {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      padding:
+        6px
+        11px;
+
+      border-radius: 999px;
+
+      background:
+        #f2f5f2;
+
+      color:
+        var(--verde);
+
+      font-size: .78rem;
+
+      font-weight: 900;
+    }
+
+    .project.red
+    .tag {
+      background:
+        var(--vermelho-claro);
+
+      color:
+        var(--vermelho);
+    }
+
+
+    /* =========================
+       CIÊNCIA
+    ========================= */
+
+    .science {
+      background:
+        var(--verde-escuro);
+
+      color: white;
+    }
+
+    .science-content {
+      max-width: 900px;
+
+      margin: auto;
+
+      padding:
+        90px
+        20px;
+
+      text-align: center;
+    }
+
+    .science-content h2 {
+      font-size:
+        clamp(
+          2.1rem,
+          5vw,
+          3.4rem
+        );
+
+      line-height: 1.05;
+    }
+
+    .science-content p {
+      color:
+        rgba(255,255,255,.82);
+
+      font-size:
+        1.05rem;
+    }
+
+    .science-badge {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding:
+        9px
+        15px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.1);
+
+      font-weight: 800;
+    }
+
+
+    /* =========================
+       PROCESSO
+    ========================= */
+
+    .process {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 20px;
+    }
+
+    .process-card {
+      background: white;
+
+      border-radius: 22px;
+
+      padding: 28px;
+
+      box-shadow:
+        var(--sombra);
+
+      border:
+        1px solid
+        var(--borda);
+    }
+
+    .number {
+      color:
+        var(--vermelho);
+
+      font-size: 2rem;
+
+      font-weight: 950;
+    }
+
+    .process-card h3 {
+      margin:
+        3px
+        0
+        7px;
+    }
+
+    .process-card p {
+      color:
+        var(--cinza);
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background:
+        #061b0f;
+
+      color:
+        #dce8df;
+
+      text-align: center;
+
+      padding:
+        45px
+        20px;
+    }
+
+    footer strong {
+      font-size: 1.05rem;
+    }
+
+    footer p {
+      opacity: .65;
+
+      font-size: .88rem;
+    }
+
+
+    /* =========================
+       BOTÃO TOPO
+    ========================= */
+
+    .top {
+      position: fixed;
+
+      right: 18px;
+
+      bottom: 18px;
+
+      z-index: 900;
+
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        var(--verde);
+
+      color: white;
+
+      text-decoration: none;
+
+      box-shadow:
+        var(--sombra);
+
+      font-size: 20px;
+
+      font-weight: 900;
+    }
+
+
+    /* =========================
+       CELULAR
+    ========================= */
+
+    @media (max-width: 780px) {
+
+      .nav-container {
+        min-height: 58px;
+      }
+
+      .logo {
+        font-size: .9rem;
+      }
+
+      .menu a {
+        font-size: .76rem;
+
+        padding:
+          7px
+          8px;
+      }
+
+      .hero {
+        min-height: 88vh;
+
+        padding:
+          105px
+          18px
+          65px;
+      }
+
+      .hero h1 {
+        letter-spacing:
+          -2.5px;
+      }
+
+      .stats {
+        margin-top:
+          -28px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding:
+          65px
+          16px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        padding: 25px;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .science-content {
+        padding:
+          70px
+          20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<nav>
+
+  <div class="nav-container">
+
+    <a
+      class="logo"
+      href="#inicio"
+    >
+      🍒 CETINSC
+      <span>• 1º Ano C</span>
+    </a>
+
+    <div class="menu">
+
+      <a href="#projetos">
+        Projetos
+      </a>
+
+      <a href="#ciencia">
+        Ciência
+      </a>
+
+      <a href="#processo">
+        Processo
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     CAPA
+========================= -->
+
+<header
+  class="hero"
+  id="inicio"
+>
+
+  <div class="hero-content">
+
+    <div class="badge">
+      🔬 MOSTRA CIENTÍFICA • CETINSC
+    </div>
+
+    <h1>
+
+      Acerola
+
+      <br>
+
+      <span>
+        em Transformação
+      </span>
+
+    </h1>
+
+    <p class="hero-description">
+
+      Uma fruta.
+      Quatro ideias.
+      Uma experiência científica.
+
+      <br>
+
+      Conheça os projetos desenvolvidos
+      pelo <strong>1º Ano C</strong> a partir
+      da acerola.
+
+    </p>
+
+    <div class="buttons">
+
+      <a
+        class="button button-primary"
+        href="#projetos"
+      >
+        🍒 Conhecer os projetos
+      </a>
+
+      <a
+        class="button button-secondary"
+        href="#ciencia"
+      >
+        🔬 A ciência por trás
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     ESTATÍSTICAS
+========================= -->
+
+<div class="stats">
+
+  <div class="stats-grid">
+
+    <div class="stat">
+
+      <strong>
+        4
+      </strong>
+
+      <span>
+        projetos desenvolvidos
+      </span>
+
+    </div>
+
+
+    <div class="stat">
+
+      <strong>
+        1
+      </strong>
+
+      <span>
+        fruta como inspiração
+      </span>
+
+    </div>
+
+
+    <div class="stat">
+
+      <strong>
+        1º C
+      </strong>
+
+      <span>
+        turma responsável
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================
+     PROJETOS
+========================= -->
+
+<section
+  class="section"
+  id="projetos"
+>
+
+  <div class="section-title">
+
+    <small>
+      NOSSOS PROJETOS
+    </small>
+
+    <h2>
+      Quatro projetos,
+      quatro caminhos
+    </h2>
+
+    <p>
+
+      Cada grupo encontrou uma maneira
+      diferente de transformar a acerola
+      em uma proposta científica.
+
+    </p>
+
+  </div>
+
+
+  <div class="projects">
+
+
+    <!-- RUBICEROLA -->
+
+    <article class="project red">
+
+      <div
+        class="project-icon"
+        aria-hidden="true"
+      >
+        💄
+      </div>
+
+      <h3>
+        Rubicerola
+      </h3>
+
+      <div class="subtitle">
+        Blush de acerola
+      </div>
+
+      <p>
+
+        O blush <strong>Rubicerola</strong>
+        é um produto desenvolvido a partir
+        do suco da acerola, explorando
+        ingredientes utilizados em produtos
+        cosméticos.
+
+      </p>
+
+      <p>
+
+        O produto foi feito através do suco
+        da acerola, óleo de rosa-mosqueta,
+        amido de milho e sérum.
+
+      </p>
+
+
+      <div class="info">
+
+        <h4>
+          🧪 Ingredientes
+        </h4>
+
+        <ul>
+
+          <li>
+            <strong>Suco de acerola:</strong>
+            fonte de vitamina C.
+          </li>
+
+          <li>
+            <strong>Óleo de rosa-mosqueta:</strong>
+            utilizado na proposta de cuidado da pele.
+          </li>
+
+          <li>
+            <strong>Amido de milho:</strong>
+            utilizado na composição.
+          </li>
+
+          <li>
+            <strong>Sérum:</strong>
+            utilizado na proposta do produto.
+          </li>
+
+        </ul>
+
+      </div>
+
+      <span class="tag">
+        Cosmética • Vitamina C • Inovação
+      </span>
+
+    </article>
+
+
+    <!-- PLÁSTICO -->
+
+    <article class="project">
+
+      <div
+        class="project-icon"
+        aria-hidden="true"
+      >
+        🧪
+      </div>
+
+      <h3>
+        Plástico biodegradável de acerola
+      </h3>
+
+      <div class="subtitle">
+        Materiais e sustentabilidade
+      </div>
+
+      <p>
+
+        O plástico biodegradável de acerola
+        é um material feito a partir de
+        componentes naturais da fruta,
+        podendo aproveitar também resíduos
+        como cascas e polpas.
+
+      </p>
+
+      <p>
+
+        A acerola fornece substâncias orgânicas
+        que, combinadas com outros materiais
+        naturais, formam uma película semelhante
+        ao plástico.
+
+      </p>
+
+      <p>
+
+        O conhecimento científico envolve
+        transformar recursos naturais em um
+        material biodegradável.
+
+      </p>
+
+      <p>
+
+        Na natureza, microrganismos como
+        bactérias e fungos conseguem decompor
+        seus componentes, transformando-os
+        em substâncias mais simples e causando
+        menor impacto ambiental.
+
+      </p>
+
+
+      <div class="info">
+
+        <h4>
+          ♻️ Ideia central
+        </h4>
+
+        <p>
+
+          Investigar como recursos naturais
+          podem ser aproveitados na criação
+          de novos materiais com potencial
+          de menor impacto ambiental.
+
+        </p>
+
+      </div>
+
+      <span class="tag">
+        Biodegradável • Sustentabilidade • Materiais
+      </span>
+
+    </article>
+
+
+    <!-- MANTEIGA -->
+
+    <article class="project">
+
+      <div
+        class="project-icon"
+        aria-hidden="true"
+      >
+        🧈
+      </div>
+
+      <h3>
+        Manteiga de Acerola
+      </h3>
+
+      <div class="subtitle">
+        Alimentação e aproveitamento
+      </div>
+
+      <p>
+
+        Uma receita que combina a textura
+        cremosa da manteiga com o sabor
+        azedo-doce da acerola, buscando
+        aproveitar a fruta de forma criativa.
+
+      </p>
+
+
+      <div class="info">
+
+        <h4>
+          ✅ Benefícios
+        </h4>
+
+        <ul>
+
+          <li>
+            Muito rica em vitamina C.
+          </li>
+
+          <li>
+            Feita com fruta de verdade.
+          </li>
+
+          <li>
+            Sem corantes e sem conservantes
+            na proposta do grupo.
+          </li>
+
+          <li>
+            Sabor único.
+          </li>
+
+          <li>
+            Produção caseira e sustentável.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="info">
+
+        <h4>
+          🥣 Ingredientes
+        </h4>
+
+        <ul>
+
+          <li>
+            75 g de manteiga sem sal
+          </li>
+
+          <li>
+            50 g de polpa de acerola
+          </li>
+
+          <li>
+            Aproximadamente 50 g de açúcar na polpa
+          </li>
+
+          <li>
+            Açúcar a gosto na manteiga
+          </li>
+
+          <li>
+            1 pitada de sal
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="info">
+
+        <h4>
+          👨‍🍳 Modo de preparo
+        </h4>
+
+        <ol>
+
+          <li>
+            Misture a polpa com os 50 g
+            de açúcar e passe na peneira fina.
+          </li>
+
+          <li>
+            Bata a manteiga até ficar cremosa,
+            coloque açúcar e a pitada de sal.
+          </li>
+
+          <li>
+            Acrescente a polpa aos poucos,
+            mexendo bem até ficar uniforme.
+          </li>
+
+          <li>
+            Guarde em recipiente fechado
+            na geladeira.
+          </li>
+
+        </ol>
+
+      </div>
+
+      <span class="tag">
+        Alimentação • Vitamina C • Aproveitamento
+      </span>
+
+    </article>
+
+
+    <!-- NAFITAC -->
+
+    <article class="project">
+
+      <div
+        class="project-icon"
+        aria-hidden="true"
+      >
+        🌿
+      </div>
+
+      <h3>
+        NafitaC
+      </h3>
+
+      <div class="subtitle">
+        Produto aromático de acerola
+      </div>
+
+      <p>
+
+        A <strong>NafitaC</strong> é um produto
+        aromático desenvolvido pelo grupo
+        com o objetivo de ajudar a espantar
+        traças das roupas e dos sapatos.
+
+      </p>
+
+      <p>
+
+        Ele funciona como uma proposta de
+        naftalina ecológica, desenvolvida para
+        ajudar a combater mofos e odores das
+        roupas, deixando-as cheirosas.
+
+      </p>
+
+      <p>
+
+        O projeto também busca aproveitar
+        os caroços da acerola, dando uma
+        nova possibilidade de utilização
+        a esse material.
+
+      </p>
+
+
+      <div class="info">
+
+        <h4>
+          💭 A história por trás
+        </h4>
+
+        <p>
+
+          A ideia possui uma história de infância
+          que incentivou o grupo a utilizar o
+          sabonete como aroma do produto.
+
+          Antigamente, algumas pessoas utilizavam
+          sabonete para ajudar a tirar o mau cheiro
+          do guarda-roupa.
+
+        </p>
+
+      </div>
+
+
+      <div class="info">
+
+        <h4>
+          ♻️ Aproveitamento
+        </h4>
+
+        <p>
+
+          O projeto une o aproveitamento dos
+          caroços da acerola, criatividade e
+          uma memória afetiva para criar
+          uma nova proposta aromática.
+
+        </p>
+
+      </div>
+
+
+      <span class="tag">
+        Aromatização • Reaproveitamento • Criatividade
+      </span>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CIÊNCIA
+========================= -->
+
+<section
+  class="science"
+  id="ciencia"
+>
+
+  <div class="science-content">
+
+    <div
+      style="
+        color:#ff7780;
+        font-weight:900;
+        letter-spacing:1.5px;
+      "
+    >
+      A MATÉRIA-PRIMA
+    </div>
+
+    <h2>
+      Por que estudar a acerola?
+    </h2>
+
+    <p>
+
+      A acerola é uma fruta conhecida por
+      apresentar grande quantidade de vitamina C.
+      Além do seu uso na alimentação, ela pode
+      ser estudada em diferentes áreas.
+
+    </p>
+
+    <p>
+
+      Nesta mostra científica, a mesma fruta
+      foi o ponto de partida para experiências
+      em alimentação, cosmética, materiais
+      biodegradáveis e aromatização.
+
+    </p>
+
+    <div class="science-badge">
+
+      🍒 Uma fruta.
+      Diferentes possibilidades.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESSO
+========================= -->
+
+<section
+  class="section"
+  id="processo"
+>
+
+  <div class="section-title">
+
+    <small>
+      NOSSA JORNADA
+    </small>
+
+    <h2>
+      Da ideia ao produto
+    </h2>
+
+    <p>
+
+      A mostra reúne pesquisa,
+      criatividade, experimentação
+      e trabalho em equipe.
+
+    </p>
+
+  </div>
+
+
+  <div class="process">
+
+
+    <article class="process-card">
+
+      <div class="number">
+        01
+      </div>
+
+      <h3>
+        Pesquisar
+      </h3>
+
+      <p>
+
+        Conhecer a acerola,
+        seus componentes e suas
+        possibilidades de utilização.
+
+      </p>
+
+    </article>
+
+
+    <article class="process-card">
+
+      <div class="number">
+        02
+      </div>
+
+      <h3>
+        Experimentar
+      </h3>
+
+      <p>
+
+        Desenvolver os produtos,
+        testar ideias e observar
+        os resultados.
+
+      </p>
+
+    </article>
+
+
+    <article class="process-card">
+
+      <div class="number">
+        03
+      </div>
+
+      <h3>
+        Apresentar
+      </h3>
+
+      <p>
+
+        Compartilhar os produtos
+        e os conhecimentos adquiridos
+        durante a mostra científica.
+
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+
+  <strong>
+    🍒 Mostra Científica • CETINSC • 1º Ano C
+  </strong>
+
+  <p>
+    Acerola em Transformação —
+    ciência, criatividade e inovação.
+  </p>
+
+</footer>
+
+
+<!-- BOTÃO VOLTAR AO TOPO -->
+
+<a
+  href="#inicio"
+  class="top"
+  aria-label="Voltar ao topo"
+>
+  ↑
+</a>
+
+
+</body>
+
+</html>
