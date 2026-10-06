@@ -101,7 +101,6 @@ footer .cta{color:#f6ecff}
 @media (max-width:860px){.hero .wrap,.split,.ig,footer .wrap{grid-template-columns:1fr}.hero .wrap{text-align:center;min-height:0;gap:2.5rem}.hero p{margin-left:auto;margin-right:auto}.nv nav{display:none}.stats{gap:1rem}.stats span{font-size:.95rem}.bento{grid-template-columns:1fr 1fr}.b1{grid-row:span 1}.b3{grid-row:span 1}.mkw{align-items:center;text-align:center}.ph .av{left:8px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero h1 .w{animation:none;opacity:1;transform:none}.fl,#btn{animation:none}.rv{opacity:1;transform:none;transition:none}}
 
-/* ===== SABADOU / POLIMENTO DA VERSÃO MELHORADA ===== */
 :root{color-scheme:dark;--glow:rgba(166,77,255,.28);--hotglow:rgba(255,79,216,.22)}
 body{background-color:var(--bg);background-image:radial-gradient(circle at 20% 10%,rgba(166,77,255,.07) 0 1px,transparent 1px),radial-gradient(circle at 80% 70%,rgba(255,79,216,.055) 0 1px,transparent 1px);background-size:28px 28px,36px 36px}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:linear-gradient(115deg,transparent 0 42%,rgba(255,255,255,.018) 50%,transparent 58%);opacity:.7}
@@ -176,5 +175,168 @@ footer{border-top:1px solid rgba(166,77,255,.18)}footer .logo{font-size:2rem}foo
 </div>
 </section>
 
+<section class="sec" id="galeria"><div class="wrap">
+  <div class="sh rv"><span class="section-tag">03 / galeria</span><h2>momentos bacanos</h2><p>Registros oficiais do Sabadou e seus amigos espalhados pelo feed.</p></div>
+  <div class="bento rv">
+    <figure class="gi b1"><img src="img/aperto.png" alt="Sabadou" loading="lazy"><figcaption>sabadou na praça</figcaption></figure>
+    <figure class="gi b2"><img src="img/natural.png" alt="Sabadou natural" loading="lazy"><figcaption>modo relax</figcaption></figure>
+    <figure class="gi b3"><img src="img/pagina.PNG" alt="Sabadou página" loading="lazy"><figcaption>olhando o movimento</figcaption></figure>
+    <figure class="gi b4"><img src="img/saba67.png" alt="Sabadou 67" loading="lazy"><figcaption>energia total</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="sec cdb" id="calabresos"><div class="wrap">
+  <div class="sh rv"><span class="section-tag">04 / contagem</span><h2>quanto falta para o sábado?</h2><p>O painel de controle oficial dos calabresos ansiosos.</p></div>
+  <div class="boxes rv">
+    <div class="box"><b><span id="d">0</span></b><span>dias</span></div>
+    <div class="box"><b><span id="h">0</span></b><span>horas</span></div>
+    <div class="box"><b><span id="m">0</span></b><span>min</span></div>
+    <div class="box pop"><b><span id="s">0</span></b><span>seg</span></div>
+  </div>
+  <hr class="dv">
+  <div class="chips rv"><button class="day on" data-d="6">sábado</button><button class="day" data-d="5">sexta-feira</button><button class="day" data-d="0">domingo</button></div>
+  <div class="rv" id="dr"><b>carregando...</b><span>calculando a distância temporal até o evento</span></div>
+  <hr class="dv">
+  <div class="mkw rv">
+    <label for="mw" style="margin-bottom:.8rem;font-family:var(--disp);font-size:1.4rem">gerador de humor do calabreso</label>
+    <input id="mw" type="text" placeholder="digite seu nome..." aria-label="Seu nome">
+    <div style="margin-top:1.6rem"><canvas id="mo" width="520" height="520" aria-hidden="true"></canvas></div>
+  </div>
+</div></section>
+
+<section class="sec ckb"><div class="wrap" style="text-align:center">
+  <div class="sh rv"><span class="section-tag">05 / interativo</span><h2>o botão oficial</h2><p>Toque no Sabadou para descarregar toda a ansiedade acumulada da semana.</p></div>
+  <div class="rv"><button id="btn" aria-label="Botão do Sabadou"><img src="img/natural.png" alt="Sabadou"></button>
+    <div id="cnt">0</div><div id="msg">cliques dados no sapo</div>
+  </div>
+</div></section>
+
+<section class="sec ig" id="insta"><div class="wrap">
+  <div class="rv"><span class="section-tag">06 / comunidade</span><h2>junte-se aos calabresos</h2><p>Siga no Instagram para não perder nenhuma resenha, figurinha nova e atualizações do universo dos bacanos.</p><a class="cta" href="https://instagram.com" target="_blank" rel="noopener">seguir no instagram</a></div>
+  <div class="rv"><img src="img/pagina.PNG" alt="Comunidade Sabadou" loading="lazy"></div>
+</div></section>
+
+<div id="lb" aria-hidden="true"><img alt="Ampliada"></div>
+
+<footer><div class="wrap">
+  <div><a class="logo" href="#top">sabadou<span>.</span></a><p style="margin:.8rem 0 0;opacity:.7;font-size:1rem">o sábado meus calabresos © 2026</p></div>
+  <nav><a href="#sobre">quem é</a><a href="#musica">música</a><a href="#galeria">galeria</a><a href="#calabresos">calabresos</a></nav>
+  <div><a class="cta sm" href="#hero">voltar ao topo ↑</a></div>
+</div></footer>
+
+<script>
+const qs=s=>document.querySelector(s), qsa=s=>document.querySelectorAll(s);
+window.addEventListener('scroll',()=>{
+  let h=document.documentElement,st=h.scrollTop||document.body.scrollTop,sh=h.scrollHeight-h.clientHeight;
+  qs('#bar').style.width=(st/sh)*100+'%';
+});
+const observer=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.15});
+qsa('.rv').forEach(el=>observer.observe(el));
+
+// Menu responsivo
+const mTog=qs('#menuToggle'), mNav=qs('#mainnav');
+if(mTog){mTog.addEventListener('click',()=>{let o=mNav.classList.toggle('open');mTog.setAttribute('aria-expanded',o);});mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mNav.classList.remove('open')));}
+
+// Letreiro marquee
+const txt=" ✦ SABADOU ✦ É SÁBADO MEUS CALABRESOS ✦ O UNIVERSO DOS BACANAS ✦ ";
+[qs('#m1 div'),qs('#m2 div')].forEach(el=>{if(el)el.textContent=txt.repeat(4);});
+function animMq(){
+  [qs('#m1'),qs('#m2')].forEach((el,i)=>{
+    if(!el)return; let d=el.querySelector('div'), w=d.offsetWidth/2;
+    let t=(Date.now()/30* (i===0?1:-1)) % w;
+    d.style.transform=`translate3d(${-t}px,0,0)`;
+  });
+  requestAnimationFrame(animMq);
+}
+animMq();
+
+// Audio e Visualizador
+const au=qs('#au'), pp=qs('#pp'), sk=qs('#sk'), vol=qs('#vol'), tm=qs('#tm');
+let actx,analyser,srcNode,rafId;
+if(au&&pp){
+  pp.addEventListener('click',()=>{
+    if(au.paused){
+      au.play(); pp.innerHTML=`<svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>`;
+      if(!actx){
+        try{
+          actx=new (window.AudioContext||window.webkitAudioContext)();
+          analyser=actx.createAnalyser(); analyser.fftSize=64;
+          srcNode=actx.createMediaElementSource(au);
+          srcNode.connect(analyser); analyser.connect(actx.destination);
+          drawEq();
+        }catch(e){}
+      }
+      if(actx&&actx.state==='suspended')actx.resume();
+    }else{
+      au.pause(); pp.innerHTML=`<svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>`;
+    }
+  });
+  au.addEventListener('timeupdate',()=>{
+    if(!isNaN(au.duration)){
+      sk.value=(au.currentTime/au.duration)*1000;
+      let m=Math.floor(au.currentTime/60), s=Math.floor(au.currentTime%60);
+      tm.textContent=`${m}:${s<10?'0':''}${s}`;
+    }
+  });
+  sk.addEventListener('input',()=>{if(!isNaN(au.duration))au.currentTime=(sk.value/1000)*au.duration;});
+  vol.addEventListener('input',()=>{au.volume=vol.value/100;});
+}
+
+function drawEq(){
+  const canvas=qs('#eq'); if(!canvas)return;
+  const ctx=canvas.getContext('2d'), bufferLength=analyser.frequencyBinCount, dataArray=new Uint8Array(bufferLength);
+  function render(){
+    rafId=requestAnimationFrame(render);
+    analyser.getByteFrequencyData(dataArray);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    let barWidth=(canvas.width/bufferLength)*1.5, x=0;
+    for(let i=0;i<bufferLength;i++){
+      let barHeight=(dataArray[i]/255)*canvas.height;
+      let grad=ctx.createLinearGradient(0,canvas.height,0,0);
+      grad.addColorStop(0,'#ff4fd8'); grad.addColorStop(1,'#f2b8ff');
+      ctx.fillStyle=grad; ctx.fillRect(x,canvas.height-barHeight,barWidth,barHeight);
+      x+=barWidth+2;
+    }
+  }
+  render();
+}
+
+// Contagem regressiva
+function upTime(){
+  let now=new Date(), next=new Date();
+  next.setDate(now.getDate()+(6-now.getDay()+7)%7); next.setHours(0,0,0,0);
+  if(now.getDay()===6)next.setDate(next.getDate()+7);
+  let diff=next-now;
+  if(diff<0)diff=0;
+  let d=Math.floor(diff/(1000*60*60*24)), h=Math.floor((diff/(1000*60*60))%24), m=Math.floor((diff/1000/60)%60), s=Math.floor((diff/1000)%60);
+  if(qs('#d'))qs('#d').textContent=d;
+  if(qs('#h'))qs('#h').textContent=h;
+  if(qs('#m'))qs('#m').textContent=m;
+  if(qs('#s'))qs('#s').textContent=s;
+}
+setInterval(upTime,1000); upTime();
+
+// Botão de cliques interativo
+let clicks=0, btn=qs('#btn'), cnt=qs('#cnt');
+if(btn){
+  btn.addEventListener('click',(e)=>{
+    clicks++; cnt.textContent=clicks;
+    let r=Math.random()*60-30, x=e.clientX+(Math.random()*40-20), y=e.clientY;
+    let f=document.createElement('div'); f.className='fy'; f.textContent=['💜','✨','💖','🐸'][Math.floor(Math.random()*4propertyPath=0?4:Math.random()*4)];
+    f.style.left=x+'px'; f.style.top=y+'px'; f.style.setProperty('--dx',r+'vw'); f.style.setProperty('--r',(r*2)+'deg');
+    document.body.appendChild(f); setTimeout(()=>f.remove(),1100);
+  });
+}
+
+// Lightbox da galeria
+const lb=qs('#lb'), lbImg=lb?lb.querySelector('img'):null;
+qsa('.gi').forEach(g=>{
+  g.addEventListener('click',()=>{
+    let img=g.querySelector('img');
+    if(lb&&lbImg&&img){lbImg.src=img.src; lb.classList.add('on');}
+  });
+});
+if(lb)lb.addEventListener('click',()=>lb.classList.remove('on'));
+</script>
 </body>
 </html>
